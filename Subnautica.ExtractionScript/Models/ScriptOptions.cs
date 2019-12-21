@@ -18,6 +18,9 @@ namespace Subnautica.ExtractionScript.Models
         public string OutputFolder { get; set; }
         public bool ExportToDatabase { get; set; }
         public bool ExportToFiles { get; set; }
+        public bool ExportUnusedData { get; set; }
+        public bool AddTildeForUnusedNames { get; set; }
+        
 
         private ScriptOptions()
         {

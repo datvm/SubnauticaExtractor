@@ -75,6 +75,8 @@
     <Compile Include="Models\DataExtractor.cs" />
     <Compile Include="Models\Exporters\FileExporter.cs" />
     <Compile Include="Models\Exporters\SQLiteExporter.cs" />
+    <Compile Include="Models\Extensions.cs" />
+    <Compile Include="Models\Utils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\ScriptOptions.cs" />
