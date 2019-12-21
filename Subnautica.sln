@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subnautica.ExtractionScript", "Subnautica.ExtractionScript\Subnautica.ExtractionScript.csproj", "{4442CF6A-CCC9-4C93-A300-E37107B50164}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Debug|x86.ActiveCfg = Debug|x86
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Debug|x86.Build.0 = Debug|x86
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Release|x86.ActiveCfg = Release|x86
+		{4442CF6A-CCC9-4C93-A300-E37107B50164}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ED7475E-18B9-404A-8C18-7A70E2F773D5}
+	EndGlobalSection
+EndGlobal
