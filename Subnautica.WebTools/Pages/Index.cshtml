@@ -1,0 +1,31 @@
+﻿@page
+
+@{
+    var title = this.ViewBag.Title = "Online Subnautica Tools";
+}
+
+<p>Welcome, please select a tool you want below:</p>
+
+<h2><a href="/items">Items</a></h2>
+
+<p>List and View Details of game items with search tool.</p>
+
+<h2><a href="/material-calculator">Material Calculator</a></h2>
+
+<p>Want to prepare a list of material for a new base before you leave? Here you can pick the items you need and the app will show what the list of materials.</p>
+
+<hr />
+
+<article>
+    <h2>Technical Details</h2>
+
+    <p>
+        Here all the data are downloaded to your browser (don't worry they are small and compressed before sending).
+        This help reducing server-load (as the server do not have to process calculations) and
+        users do not have to worry about their data being sent.
+    </p>
+
+    <p>This also helps later if I decide to make it into a PWA to make everything works offline.</p>
+
+    <p>You can host the tool yourself or check the source code on <a target="_blank" href="https://github.com/datvm/SubnauticaExtractor">Github</a>. The Github repo also contains the data dump if you only need the raw data.</p>
+</article>

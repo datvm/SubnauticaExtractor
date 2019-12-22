@@ -1,0 +1,65 @@
+﻿@page "/items"
+
+@{
+    var title = this.ViewBag.Title = "Subnautica Items";
+}
+
+@section Heads  {
+
+    <link rel="prefetch" href="~/css/app-items.min.css" asp-append-version="true" onload="this.rel='stylesheet'" />
+
+}
+
+<div id="loader">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div class="mb-3" style="grid-area: search;">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">🔍</span>
+        </div>
+        <input id="txt-search" class="form-control" placeholder="Search an item" />
+    </div>
+</div>
+
+<div style="grid-area: group">
+    <select id="cbo-groups" class="form-control"></select>
+</div>
+
+<div style="grid-area: category">
+    <select id="cbo-categories" class="form-control"></select>
+</div>
+
+<div class="list-box" id="lst-items" style="grid-area: items">
+
+</div>
+
+<div style="grid-area: details">
+    <p id="pnl-category" class="invisible">
+        <a id="lbl-group" href="#">#</a>
+        >
+        <a id="lbl-category" href="#">#</a>
+    </p>
+    <h3 id="lbl-name">Please choosen an item</h3>
+    <p id="lst-tags" class="list-tags"></p>
+
+    <h4>Crafting</h4>
+    <div id="lst-ingredients">
+
+    </div>
+    <p>Crafting results in <span id="lbl-amount">0</span> pieces.</p>
+
+    <h4>Other info</h4>
+    <ul id="lst-info">
+
+    </ul>
+</div>
+
+@section Scripts  {
+
+    <script type="module" src="~/js/v1/page-items.js"></script>
+
+}

@@ -39,7 +39,7 @@ namespace Subnautica.ExtractionScript.Models.Exporters
 
         void SaveItem(object item, string name, bool forceExport)
         {
-            if (!forceExport && !Utils.UsingProperties.Contains(name))
+            if (!forceExport && !Utils.UsingProperties.Contains(name) && !Utils.UsingTables.Contains(name))
             {
                 if (!this.options.ExportUnusedData)
                 {

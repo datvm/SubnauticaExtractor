@@ -1,0 +1,28 @@
+﻿html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header" "main" "footer";
+
+    header, footer {
+        padding: 1rem 0;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    main {
+        grid-area: main;
+    }
+}

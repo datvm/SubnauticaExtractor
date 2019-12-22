@@ -1,0 +1,17 @@
+﻿html, body {
+  width: 100%;
+  min-height: 100vh; }
+
+.page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer"; }
+  .page header, .page footer {
+    padding: 1rem 0; }
+  .page header {
+    grid-area: header; }
+  .page footer {
+    grid-area: footer; }
+  .page main {
+    grid-area: main; }

@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>@this.ViewBag.Title</title>
+
+    <link rel="prefetch" href="~/css/site.min.css" asp-append-version="true" onload="this.rel='stylesheet'" />
+    @await this.RenderSectionAsync("Heads", false)
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="container">
+                <h1>@this.ViewBag.Title</h1>
+            </div>
+        </header>
+
+        <main class="container">
+            @this.RenderBody()
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p><a href="/">Home</a></p>
+                        <p>The website source code, data and tools are open-sourced on <a href="https://github.com/datvm/SubnauticaExtractor" target="_blank">Github</a>.</p>
+                        
+                    </div>
+                    <div class="col">
+                        <p>If you like my work and want to help, please consider <a target="_blank" href="https://www.paypal.me/datvm">donating me</a> or <a target="_blank" href="https://www.lukevo.com/">checking my CV website</a>.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+    
+    @await this.RenderSectionAsync("Scripts", false)
+</body>
+</html>

@@ -20,7 +20,7 @@ namespace Subnautica.ExtractionScript.Models.Exporters
         private const string Integer = "INTEGER";
         private const string Real = "REAL";
         private const string Text = "TEXT";
-        static readonly HashSet<string> UsingTables = Utils.UsingProperties;
+        static readonly HashSet<string> UsingTables = Utils.UsingTables;
 
         public string OutputFile { get; private set; }
 
