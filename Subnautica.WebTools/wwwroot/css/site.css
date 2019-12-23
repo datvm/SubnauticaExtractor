@@ -2,9 +2,12 @@
   width: 100%;
   min-height: 100vh; }
 
+body {
+  height: 100vh; }
+
 .page {
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "main" "footer"; }
   .page header, .page footer {
@@ -14,4 +17,24 @@
   .page footer {
     grid-area: footer; }
   .page main {
-    grid-area: main; }
+    grid-area: main;
+    position: relative;
+    display: grid;
+    height: 100%; }
+
+#loader {
+  text-align: center; }
+
+.list-box {
+  max-height: 100%;
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  right: 0; }
+  .list-box > .item {
+    display: block;
+    padding: .75rem .5rem;
+    cursor: pointer;
+    transition: all ease-in-out .25s; }
+    .list-box > .item:hover {
+      background: #ededed; }

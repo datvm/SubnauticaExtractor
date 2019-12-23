@@ -1,0 +1,67 @@
+﻿@page "/material-calculator"
+
+@{
+    var title = this.ViewBag.Title = "Subnautica Raw Material Calculator";
+}
+
+@section Heads {
+
+    <link rel="prefetch" href="~/css/app-calculator.min.css" asp-append-version="true" onload="this.rel='stylesheet'" />
+
+}
+
+<div id="loader">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div class="mb-1" style="grid-area: search;">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">🔍</span>
+        </div>
+        <input id="txt-search" class="form-control" placeholder="Search an item" />
+    </div>
+</div>
+
+<div id="lst-items" class="list-box" style="grid-area: items;">
+</div>
+
+<hr style="grid-area: separator" class="my-3" />
+
+<div id="lst-selected-items" class="list-box" style="grid-area: list">
+
+</div>
+
+<div id="lst-materials" class="list-box" style="grid-area: details">
+
+</div>
+
+<template id="template-select-item">
+    <div class="item d-flex">
+        <div class="flex-grow-1">
+            <span data-name></span>
+        </div>
+        <div>
+            <button class="btn btn-danger btn-delete">×</button>
+        </div>
+    </div>
+</template>
+
+<template id="template-material">
+    <div class="item d-flex">
+        <div class="flex-grow-1">
+            <span data-name></span>
+        </div>
+        <div>
+            <span data-quantity></span>
+        </div>
+    </div>
+</template>
+
+@section Scripts {
+
+    <script type="module" defer src="~/js/v1/page-calculator.js"></script>
+
+}

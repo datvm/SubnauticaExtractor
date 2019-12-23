@@ -1,0 +1,11 @@
+﻿.page {
+    > main {
+        grid-template-areas: "search search" "items items" "separator separator" "list details";
+        grid-template-rows: auto 300px auto 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        > * {
+            margin: .4rem;
+        }
+    }
+}

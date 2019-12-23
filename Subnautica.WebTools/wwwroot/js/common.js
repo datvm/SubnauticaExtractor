@@ -7,6 +7,13 @@
             .forEach(el => el.classList.toggle("d-none", show));
     }
 
+    static fromTemplate(template) {
+        let div = document.createElement("div");
+        div.innerHTML = template;
+
+        return div.firstElementChild;
+    }
+
 }
 
 Element.prototype.addEventDelegate = function (eventName, cssMatch, callback) {

@@ -10,5 +10,9 @@
   {
     "outputFile": "wwwroot/css/app-items.css",
     "inputFile": "wwwroot/css/app-items.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/app-calculator.css",
+    "inputFile": "wwwroot/css/app-calculator.scss"
   }
 ]
