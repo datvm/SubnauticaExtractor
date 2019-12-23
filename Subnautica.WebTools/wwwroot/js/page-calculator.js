@@ -5,6 +5,7 @@ class CalculatorPage {
 
     ready = false;
     selectedItems = [];
+    materialBreakdown = [];
 
     lstItems = document.querySelector("#lst-items");
     lstSelectedItems = document.querySelector("#lst-selected-items");
@@ -95,25 +96,78 @@ class CalculatorPage {
     }
 
     _calculateMaterials() {
-        var materials = {};
+        this.materialBreakdown = [];
 
+        let first = {};
         for (let item of this.selectedItems) {
-            this._calculateMaterialsForItem(item, 1, materials);
+            first[item.name] = (first[item.name] || 0) + 1;
         }
+        this.materialBreakdown.push(first);
+
+        while (this._breakdownMaterials());
 
         this.lstMaterials.innerHTML = "";
-        for (let material in materials) {
-            let count = materials[material];
+        var isFirst = true;
+        for (let breakdown of this.materialBreakdown) {
+            if (isFirst) {
+                isFirst = false;
+                continue;
+            }
 
-            let el = Common.fromTemplate(this.templateMaterialItem);
-            el.querySelector("[data-name]").innerHTML = material;
-            el.querySelector("[data-quantity]").innerHTML = count;
+            let container = document.createElement("div");
+            
+            let lst = document.createElement("div");
+            lst.className = "list-box";
+            
+            for (let material in breakdown) {
+                let count = breakdown[material];
 
-            this.lstMaterials.append(el);
+                let el = Common.fromTemplate(this.templateMaterialItem);
+                el.querySelector("[data-name]").innerHTML = material;
+                el.querySelector("[data-quantity]").innerHTML = count;
+
+                lst.append(el);
+            }
+
+            container.append(lst);
+            this.lstMaterials.appendChild(container);
         }
     }
 
+    _breakdownMaterials() {
+        let previous = this.materialBreakdown[this.materialBreakdown.length - 1];
+        var current = {};
+        let changed = false;
+
+        for (let itemName in previous) {
+            var quantity = previous[itemName];
+            let item = this.gameData.getItemDetails(itemName);
+
+            if (item.crafting) {
+                changed = true;
+
+                for (let ingredient of item.crafting.ingredients) {
+                    let iName = ingredient.item.name;
+                    var craftingAmount = item.crafting.amount;
+
+                    var need = parseInt((ingredient.amount * quantity + craftingAmount - 1) / craftingAmount);
+                    current[iName] = (current[iName] || 0) + need;
+                }
+            } else {
+                current[itemName] = (current[itemName] || 0) + quantity;
+            }
+        }
+
+        if (changed) {
+            this.materialBreakdown.push(current);
+        }
+
+        return changed;
+    }
+
     _calculateMaterialsForItem(item, count, materials) {
+        this.gameData.getItemDetails(item.id);
+
         if (item.crafting) {
             for (let ingredient of item.crafting.ingredients) {
                 this._calculateMaterialsForItem(ingredient.item, ingredient.amount * count, materials);
