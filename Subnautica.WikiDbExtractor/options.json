@@ -1,0 +1,10 @@
+{
+    "GameFolder": "F:\\Game\\SteamLibrary\\steamapps\\common\\Subnautica",
+    "OutputFolder": "D:\\Temp\\Subnautica\\RawData",
+    "Exports": {
+        "Languages": true
+    },
+    "Languages": {
+        "LimitToLanguages": [ "English", "Vietnamese" ]
+    }
+}

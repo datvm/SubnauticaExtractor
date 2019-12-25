@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subnautica.ExtractionScript", "Subnautica.ExtractionScript\Subnautica.ExtractionScript.csproj", "{4442CF6A-CCC9-4C93-A300-E37107B50164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subnautica.WebTools", "Subnautica.WebTools\Subnautica.WebTools.csproj", "{2B0ED6DA-EFD2-4A89-A842-1924E20597C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Subnautica.WebTools", "Subnautica.WebTools\Subnautica.WebTools.csproj", "{2B0ED6DA-EFD2-4A89-A842-1924E20597C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subnautica.WikiDbExtractor", "Subnautica.WikiDbExtractor\Subnautica.WikiDbExtractor.csproj", "{DD6987DE-3082-4694-A909-0A2D91C59AFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{2B0ED6DA-EFD2-4A89-A842-1924E20597C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B0ED6DA-EFD2-4A89-A842-1924E20597C9}.Release|x86.ActiveCfg = Release|Any CPU
 		{2B0ED6DA-EFD2-4A89-A842-1924E20597C9}.Release|x86.Build.0 = Release|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Debug|x86.Build.0 = Debug|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Release|x86.ActiveCfg = Release|Any CPU
+		{DD6987DE-3082-4694-A909-0A2D91C59AFC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

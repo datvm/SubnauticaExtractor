@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LitJson;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,21 @@ namespace Subnautica.ExtractionScript.Models
     {
 
         public string GameFolder { get; private set; }
+        public string UnmanagedFolder
+        {
+            get
+            {
+                return Path.Combine(this.GameFolder, "SNUnmanagedData");
+            }
+        }
+
+        public string LanguageFolder
+        {
+            get
+            {
+                return Path.Combine(this.UnmanagedFolder, "LanguageFiles");
+            }
+        }
 
         public string EntryFile
         {
@@ -26,6 +42,32 @@ namespace Subnautica.ExtractionScript.Models
         public DataExtractor(string gameFolder)
         {
             this.GameFolder = gameFolder;
+        }
+
+        public List<string> SupportedLanguages()
+        {
+            return Directory.EnumerateFiles(this.LanguageFolder, "*.json")
+                .Select(q => Path.GetFileNameWithoutExtension(q))
+                .ToList();
+        }
+
+        public Dictionary<string, string> ExtractLanguage(string name)
+        {
+            var filePath = Path.Combine(this.LanguageFolder, $"{name}.json");
+
+            JsonData jsonData;
+            using (var reader = new StreamReader(filePath))
+            {
+                jsonData = JsonMapper.ToObject(reader);
+            }
+
+            var result = new Dictionary<string, string>();
+            foreach (var key in jsonData.Keys)
+            {
+                result[key] = (string) jsonData[key];
+            }
+
+            return result;
         }
 
         public DataPack Extract()
